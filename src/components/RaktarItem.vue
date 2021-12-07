@@ -1,12 +1,10 @@
 <template>
-    <div>
-        <tr>
-            <td>{{ title }}</td>
-            <td>{{ price }}</td>
-            <td>{{ quantity }}</td>
-            <td><button>Delete</button><button>Edit</button></td>
-        </tr>
-    </div>
+    <tr>
+        <td>{{ title }}</td>
+        <td>{{ price }}</td>
+        <td>{{ quantity }}</td>
+        <td><button>Delete</button><button>Edit</button></td>
+    </tr>
 </template>
 
 <script>
