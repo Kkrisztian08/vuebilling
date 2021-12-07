@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Raktar :rows="rows"/>
+    <Raktar :rows="rows" @raktar-item-changed="Changed" @raktar-item-hozzaad="Hozzaad" @raktar-item-delete="Delete"/>
   </div>
 </template>
 
@@ -36,6 +36,23 @@ export default {
           quantity: 321
         },
       ]
+    }
+  },
+  methods:{
+      Changed(e) {
+      this.rows.map(function (raktar) {
+        if (raktar.title != e.original.title) {
+          return raktar
+        }
+        raktar.title = e.new.title
+        return raktar
+      })
+    },
+    Hozzaad(e){
+      this.rows.push(e.new)
+    },
+    Delete(e){
+      this.rows.splice(this.rows.indexOf(e.original), 1);
     }
   }
 }
