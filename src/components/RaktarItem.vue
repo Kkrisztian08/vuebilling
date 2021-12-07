@@ -1,17 +1,15 @@
 <template>
-    <tr>
-        <td  v-if="!edit">{{ title }}</td>
-        <td  v-if="!edit">{{ price }}</td>
-        <td  v-if="!edit">{{ quantity }}</td>
-        <td  v-if="!edit"><button @click="Delete">X</button><button @click="Edit">Edit</button></td>
-
-        <td v-if="edit"><input type="text"></td>
-        <td v-if="edit"><input type="number"></td>
-        <td v-if="edit"><input type="number"></td>
-        <td v-if="edit"><button @click="Save">Save</button></td>
-    </tr>
+  <tr>
+    <td v-if="edit"><input type="text" v-model="title" v-bind="title"></td>
+    <td v-if="edit"><input type="number" v-model="price" v-bind="price"></td>
+    <td v-if="edit"><input type="number" v-model="quantity" v-bind="quantity"></td>
+    <td v-if="edit"><button @click="Save">Save</button></td>
     
-    
+    <td v-if="!edit">{{title}}</td>
+    <td v-if="!edit">{{price}}</td>
+    <td v-if="!edit">{{quantity}}</td>
+    <td v-if="!edit"><button @click="Delete">X</button> <button @click="Edit">Edit</button></td>
+  </tr>
 </template>
 
 <script>
@@ -20,9 +18,9 @@ export default {
     data() {
         return {
             title: this.raktar.title,
-            price: this.raktar.price,
-            quantity: this.raktar.quantity,
-            edit: false,
+            price:this.raktar.price,
+            quantity:this.raktar.quantity,
+            edit:false
         }
     },
     methods: {
@@ -46,7 +44,6 @@ export default {
             })
         }
     }
-    
 }
 </script>
 

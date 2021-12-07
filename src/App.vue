@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Raktar :rows="rows" @raktar-item-changed="Changed" @raktar-item-hozzaad="Hozzaad" @raktar-item-delete="Delete"/>
+    <raktar :rows="rows" @raktar-item-changed="Changed" @raktar-item-hozzaad="Hozzaad" @raktar-item-delete="Delete"/>
   </div>
 </template>
 
@@ -52,9 +52,9 @@ export default {
       this.rows.push(e.new)
     },
     Delete(e){
-      this.rows.splice(this.rows.indexOf(e.original), 1);
+        this.rows.splice(this.rows.indexOf(e.original), 1);
+      }
     }
-  }
 }
 </script>
 
