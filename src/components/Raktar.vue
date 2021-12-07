@@ -1,25 +1,28 @@
 <template>
     <table>
-        <th>Title</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Operations</th>
-        <th>Összérték</th>
-
-        <RaktarItem
-            v-for="raktar in rows"
-            v-bind:key="raktar.title"
-            :raktar="raktar"
-            @raktar-item-changed="Changed"
-            @raktar-item-delete="Delete"
-        />
-
-        <tr>
-            <td><input type="text" v-model="title" placeholder="Title"></td>
-            <td><input type="number" v-model="price" placeholder="Price"></td>
-            <td><input type="number" v-model="quantity" placeholder="Quantity"></td>
-            <td><button @click="Hozzaad"> Hozzáad</button></td>
-        </tr>
+        <thead>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Operations</th>
+            <th>Összérték</th>
+        </thead>
+        <tbody>
+            <RaktarItem
+                v-for="raktar in rows"
+                v-bind:key="raktar.title"
+                :raktar="raktar"
+                @raktar-item-changed="Changed"
+                @raktar-item-delete="Delete"
+            />
+            <tr>
+                <td><input type="text" v-model="title" placeholder="Title"></td>
+                <td><input type="number" v-model="price" placeholder="Price"></td>
+                <td><input type="number" v-model="quantity" placeholder="Quantity"></td>
+                <td><button @click="Hozzaad"> Hozzáad</button></td>
+                
+            </tr>
+        </tbody>
     </table>
 </template>
 

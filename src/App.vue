@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <raktar :rows="rows" @raktar-item-changed="Changed" @raktar-item-hozzaad="Hozzaad" @raktar-item-delete="Delete"/>
+    <Raktar :rows="rows" @raktar-item-changed="Changed" @raktar-item-hozzaad="Hozzaad" @raktar-item-delete="Delete"/>
   </div>
 </template>
 
