@@ -9,6 +9,7 @@
     <td v-if="!edit">{{price}}</td>
     <td v-if="!edit">{{quantity}}</td>
     <td v-if="!edit"><button @click="Delete">X</button> <button @click="Edit">Edit</button></td>
+    <td v-if="!edit">{{quantity*price}}</td>
   </tr>
 </template>
 

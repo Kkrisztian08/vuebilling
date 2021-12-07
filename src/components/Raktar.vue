@@ -4,6 +4,8 @@
         <th>Price</th>
         <th>Quantity</th>
         <th>Operations</th>
+        <th>Összérték</th>
+
         <RaktarItem
             v-for="raktar in rows"
             v-bind:key="raktar.title"
@@ -11,6 +13,7 @@
             @raktar-item-changed="Changed"
             @raktar-item-delete="Delete"
         />
+
         <tr>
             <td><input type="text" v-model="title" placeholder="Title"></td>
             <td><input type="number" v-model="price" placeholder="Price"></td>
